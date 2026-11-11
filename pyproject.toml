@@ -1,0 +1,32 @@
+[project]
+name = "credit-intelligence-platform"
+version = "0.1.0"
+description = "Credit analysis and decision-support platform"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "psycopg[binary]>=3.2,<4",
+  "python-dotenv>=1.0,<2",
+  "sqlalchemy>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "ruff>=0.9,<1",
+]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
