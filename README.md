@@ -25,6 +25,9 @@ source .venv/bin/activate
 python scripts/init_database.py
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/seed.sql
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/analysis_queries.sql
+/opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day2_trend_analysis.sql
+/opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day2_risk_screening.sql
+/opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day2_data_quality.sql
 pytest
 ruff check .
 ```
@@ -36,6 +39,9 @@ The schema and seed scripts are safe to run more than once.
 - `sql/schema.sql`: database tables, constraints, and indexes
 - `sql/seed.sql`: repeatable sample data
 - `sql/analysis_queries.sql`: initial portfolio analysis
+- `sql/day2_trend_analysis.sql`: multi-year growth and profitability trends
+- `sql/day2_risk_screening.sql`: latest-year review flags and risk levels
+- `sql/day2_data_quality.sql`: missing, duplicate, and unusual-record checks
 - `src/credit_intelligence`: Python package and database connection
 - `scripts`: database setup and connection checks
 - `tests`: automated environment tests

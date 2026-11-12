@@ -18,9 +18,21 @@ INSERT INTO financial_statements (
 )
 VALUES
     ((SELECT company_id FROM companies WHERE legal_name = 'Northstar Components LLC'),
+     2023, 15200000, 980000, 10400000, 5860000, 1210000),
+    ((SELECT company_id FROM companies WHERE legal_name = 'Northstar Components LLC'),
+     2024, 16800000, 1180000, 11200000, 6080000, 1460000),
+    ((SELECT company_id FROM companies WHERE legal_name = 'Northstar Components LLC'),
      2025, 18500000, 1420000, 12100000, 6350000, 1750000),
     ((SELECT company_id FROM companies WHERE legal_name = 'Harborview Logistics Inc.'),
+     2023, 8300000, 420000, 7100000, 4860000, 610000),
+    ((SELECT company_id FROM companies WHERE legal_name = 'Harborview Logistics Inc.'),
+     2024, 9100000, 370000, 7800000, 5580000, 580000),
+    ((SELECT company_id FROM companies WHERE legal_name = 'Harborview Logistics Inc.'),
      2025, 9700000, 310000, 8400000, 6210000, 540000),
+    ((SELECT company_id FROM companies WHERE legal_name = 'Juniper Health Systems'),
+     2023, 12700000, 460000, 9300000, 6890000, 720000),
+    ((SELECT company_id FROM companies WHERE legal_name = 'Juniper Health Systems'),
+     2024, 13600000, 140000, 10100000, 8010000, 410000),
     ((SELECT company_id FROM companies WHERE legal_name = 'Juniper Health Systems'),
      2025, 14300000, -180000, 10900000, 9170000, 120000)
 ON CONFLICT (company_id, fiscal_year) DO NOTHING;
