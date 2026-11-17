@@ -33,6 +33,9 @@ python scripts/import_financials.py
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day3_staging_validation.sql
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day3_load_clean_data.sql
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day3_reconciliation.sql
+/opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day4_financial_metrics_view.sql
+/opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day4_latest_credit_risk_view.sql
+/opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day4_portfolio_summary.sql
 pytest
 ruff check .
 ```
@@ -52,6 +55,9 @@ The schema and seed scripts are safe to run more than once.
 - `sql/day3_staging_validation.sql`: staging completeness, uniqueness, and validity checks
 - `sql/day3_load_clean_data.sql`: validated, deduplicated upsert into the core table
 - `sql/day3_reconciliation.sql`: row-level accepted and rejection outcomes
+- `sql/day4_financial_metrics_view.sql`: reusable company-year financial metrics view
+- `sql/day4_latest_credit_risk_view.sql`: latest company-level risk classification view
+- `sql/day4_portfolio_summary.sql`: portfolio summary by credit risk level
 - `src/credit_intelligence`: Python package and database connection
 - `scripts`: database setup, connection checks, and CSV ingestion
 - `tests`: automated environment and ingestion tests
