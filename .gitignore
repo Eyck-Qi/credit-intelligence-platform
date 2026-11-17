@@ -7,5 +7,6 @@ __pycache__/
 .ruff_cache/
 .DS_Store
 .env
-data/raw/
+data/raw/*
+!data/raw/company_financials_sample.csv
 
