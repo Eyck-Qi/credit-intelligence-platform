@@ -36,6 +36,7 @@ python scripts/import_financials.py
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day4_financial_metrics_view.sql
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day4_latest_credit_risk_view.sql
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day4_portfolio_summary.sql
+python scripts/generate_credit_report.py
 pytest
 ruff check .
 ```
@@ -58,6 +59,8 @@ The schema and seed scripts are safe to run more than once.
 - `sql/day4_financial_metrics_view.sql`: reusable company-year financial metrics view
 - `sql/day4_latest_credit_risk_view.sql`: latest company-level risk classification view
 - `sql/day4_portfolio_summary.sql`: portfolio summary by credit risk level
+- `scripts/generate_credit_report.py`: export the latest risk view to CSV
+- `data/processed/latest_credit_risk.csv`: generated company credit risk report
 - `src/credit_intelligence`: Python package and database connection
 - `scripts`: database setup, connection checks, and CSV ingestion
 - `tests`: automated environment and ingestion tests

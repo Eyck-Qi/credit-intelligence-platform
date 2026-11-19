@@ -1,0 +1,4 @@
+company_id,legal_name,industry,fiscal_year,revenue_growth_pct,net_margin_pct,debt_to_asset_ratio,operating_cash_flow_margin,risk_level
+3,Juniper Health Systems,Healthcare,2026,4.20,-1.74,0.8632,0.0054,high
+2,Harborview Logistics Inc.,Transportation,2026,6.19,2.52,0.7560,0.0476,medium
+1,Northstar Components LLC,Manufacturing,2026,8.65,7.86,0.5091,0.0955,low
