@@ -39,6 +39,7 @@ python scripts/import_financials.py
 python scripts/generate_credit_report.py
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day6_credit_decision_view.sql
 /opt/homebrew/opt/postgresql@16/bin/psql -U credit_app -d credit_intelligence -f sql/day6_decision_summary.sql
+python scripts/generate_excel_report.py
 pytest
 ruff check .
 ```
@@ -65,6 +66,8 @@ The schema and seed scripts are safe to run more than once.
 - `data/processed/latest_credit_risk.csv`: generated company credit risk report
 - `sql/day6_credit_decision_view.sql`: explainable application-level decision engine
 - `sql/day6_decision_summary.sql`: decision volume and requested-exposure summary
+- `scripts/generate_excel_report.py`: create the formatted Excel decision report
+- `outputs/day7-credit-report/credit_intelligence_report.xlsx`: Excel portfolio report
 - `src/credit_intelligence`: Python package and database connection
 - `scripts`: database setup, connection checks, and CSV ingestion
 - `tests`: automated environment and ingestion tests
