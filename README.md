@@ -9,6 +9,7 @@ assessing credit risk, and supporting lending decisions.
 - PostgreSQL 16
 - SQLAlchemy and Psycopg
 - Pytest and Ruff
+- Microsoft Excel and Power BI Service
 
 ## Local database
 
@@ -68,6 +69,7 @@ The schema and seed scripts are safe to run more than once.
 - `sql/day6_decision_summary.sql`: decision volume and requested-exposure summary
 - `scripts/generate_excel_report.py`: create the formatted Excel decision report
 - `outputs/day7-credit-report/credit_intelligence_report.xlsx`: Excel portfolio report
+- `docs/day8-power-bi.md`: Power BI dashboard design, metrics, and verification notes
 - `src/credit_intelligence`: Python package and database connection
 - `scripts`: database setup, connection checks, and CSV ingestion
 - `tests`: automated environment and ingestion tests
