@@ -1,6 +1,3 @@
--- Day 2: Data quality checks
-
--- Find financial statements with missing operating cash flow.
 SELECT
     company_id,
     fiscal_year,
@@ -16,7 +13,6 @@ FROM financial_statements
 GROUP BY company_id, fiscal_year
 HAVING COUNT(*) > 1;
 
--- Find records with liabilities above assets or zero reported revenue.
 SELECT
     company_id,
     fiscal_year,

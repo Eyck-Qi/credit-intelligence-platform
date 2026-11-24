@@ -1,2 +1,0 @@
-"""Credit Intelligence Platform package."""
-

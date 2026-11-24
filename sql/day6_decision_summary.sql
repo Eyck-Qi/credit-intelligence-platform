@@ -1,6 +1,3 @@
--- Day 6: Credit decision portfolio summary
-
--- Summarize application volume and requested exposure by system decision.
 SELECT
     system_recommendation,
     COUNT(*) AS application_count,

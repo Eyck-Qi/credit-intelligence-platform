@@ -1,6 +1,3 @@
--- Day 4: Credit portfolio summary
-
--- Summarize the latest company-level risk results for portfolio monitoring.
 
 SELECT
     risk_level,

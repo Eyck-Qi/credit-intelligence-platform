@@ -1,6 +1,3 @@
--- Day 2: Multi-year financial trend analysis
-
--- Calculate year-over-year revenue growth and key financial ratios.
 WITH financial_trends AS (
     SELECT
         company_id,
@@ -15,7 +12,6 @@ WITH financial_trends AS (
         ) AS previous_year_revenue
     FROM financial_statements
 )
--- Show current and prior-year net income by company.
 SELECT
     c.legal_name,
     ft.fiscal_year,
@@ -44,7 +40,6 @@ SELECT
 FROM financial_statements
 ORDER BY company_id, fiscal_year;
 
--- Calculate net income changes and classify the profit trend.
 WITH net_income_trends AS (
     SELECT
         company_id,

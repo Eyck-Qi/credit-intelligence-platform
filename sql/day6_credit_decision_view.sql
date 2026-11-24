@@ -1,7 +1,3 @@
--- Day 6: Explainable credit decision engine
-
--- Goal: combine each loan application with its company, existing assessment,
--- and latest financial risk metrics before generating a system decision.
 
 CREATE OR REPLACE VIEW vw_credit_decisions AS
 WITH application_context AS (
@@ -31,7 +27,6 @@ WITH application_context AS (
 decision_results AS (
     SELECT
         ac.*,
-        -- Apply the most severe matching decision rule first.
         CASE
             WHEN ac.risk_level = 'high'
                 OR ac.credit_score < 50
@@ -43,7 +38,6 @@ decision_results AS (
                 THEN 'review'
             ELSE 'approve'
         END AS system_recommendation,
-        -- Return the primary reason associated with the first matching rule.
         CASE
             WHEN ac.risk_level = 'high'
                 THEN 'High financial risk based on latest financial metrics'

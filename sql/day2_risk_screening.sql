@@ -1,6 +1,3 @@
--- Day 2: Latest-year credit risk screening
-
--- Identify latest-year records that require credit review.
 WITH latest_financials AS (
     SELECT
         f.company_id,
@@ -33,7 +30,6 @@ JOIN companies AS c USING (company_id)
 WHERE lf.net_income < 0 OR lf.debt_to_asset_ratio > 0.70
 ORDER BY lf.debt_to_asset_ratio DESC;
 
--- Assign a risk level to every company using profitability, leverage, and cash flow.
 WITH company_risk_metrics AS (
     SELECT
         f.company_id,
@@ -63,8 +59,3 @@ SELECT
 FROM company_risk_metrics AS crm
 JOIN companies AS c USING (company_id)
 ORDER BY c.legal_name;
-
--- Risk rules, evaluated from top to bottom:
---   high:   net_income < 0 OR debt_to_asset_ratio > 0.80
---   medium: debt_to_asset_ratio > 0.70 OR operating_cash_flow_margin < 0.05
---   low:    everything else

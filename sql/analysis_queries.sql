@@ -1,4 +1,3 @@
--- Credit application summary with core financial and risk indicators.
 SELECT
     c.legal_name,
     c.industry,
@@ -17,7 +16,6 @@ JOIN loan_applications AS l USING (company_id)
 JOIN credit_assessments AS a USING (application_id)
 ORDER BY a.credit_score DESC;
 
--- Portfolio exposure grouped by recommendation.
 SELECT
     a.recommendation,
     COUNT(*) AS application_count,

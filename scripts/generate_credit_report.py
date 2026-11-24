@@ -20,7 +20,6 @@ REPORT_COLUMNS = (
     "risk_level",
 )
 
-# Return the latest company risk results in review-priority order.
 LATEST_RISK_QUERY = text(
     """
     SELECT

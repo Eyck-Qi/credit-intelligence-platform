@@ -1,4 +1,3 @@
--- Day 3: Reconcile every staging row to a load or rejection outcome.
 
 WITH staged_rows AS (
     SELECT
@@ -43,12 +42,3 @@ SELECT
     END AS load_status
 FROM staged_rows
 ORDER BY staging_id;
-
--- Reconciliation priority:
---   1. missing_company
---   2. unknown_company
---   3. invalid_year
---   4. invalid_revenue
---   5. missing_cash_flow
---   6. duplicate
---   7. accepted

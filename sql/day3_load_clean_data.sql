@@ -1,4 +1,3 @@
--- Day 3: Validate, deduplicate, and load staging data into the core table.
 
 WITH validated_rows AS (
     SELECT

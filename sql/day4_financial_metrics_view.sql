@@ -1,4 +1,3 @@
--- Day 4: Reusable company-year financial metrics
 
 CREATE OR REPLACE VIEW vw_company_financial_metrics AS
 WITH financial_trends AS (

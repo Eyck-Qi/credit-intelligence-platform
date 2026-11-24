@@ -1,6 +1,3 @@
--- Day 3: Staging data quality validation
-
--- Import batch summary.
 SELECT
     source_file,
     COUNT(*) AS row_count,
@@ -9,7 +6,6 @@ FROM stg_financial_statements
 GROUP BY source_file
 ORDER BY source_file;
 
--- Find missing company names or operating cash flow values.
 SELECT
     staging_id,
     company_name,
@@ -19,7 +15,6 @@ FROM stg_financial_statements
 WHERE NULLIF(TRIM(company_name), '') IS NULL
    OR NULLIF(TRIM(cash_flow_from_operations), '') IS NULL;
 
--- Find duplicate company-year keys after normalizing company names.
 SELECT
     LOWER(TRIM(company_name)) AS normalized_company_name,
     fiscal_year,
@@ -30,7 +25,6 @@ GROUP BY
     fiscal_year
 HAVING COUNT(*) > 1;
 
--- Find malformed or out-of-range fiscal years.
 SELECT
     staging_id,
     company_name,
@@ -42,7 +36,6 @@ WHERE CASE
     ELSE TRUE
 END;
 
--- Find malformed or negative revenue values.
 SELECT
     staging_id,
     company_name,
@@ -55,7 +48,6 @@ WHERE CASE
     ELSE TRUE
 END;
 
--- Find named companies that do not exist in the company master table.
 SELECT
     s.staging_id,
     s.company_name,

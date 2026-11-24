@@ -1,4 +1,3 @@
--- Day 3: Raw financial data staging layer
 
 CREATE TABLE IF NOT EXISTS stg_financial_statements (
     staging_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

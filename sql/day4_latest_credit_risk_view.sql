@@ -1,4 +1,3 @@
--- Day 4: Latest company-level credit risk classification
 
 CREATE OR REPLACE VIEW vw_latest_credit_risk AS
 WITH ranked_financials AS (
