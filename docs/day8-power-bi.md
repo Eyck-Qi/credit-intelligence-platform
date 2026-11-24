@@ -1,4 +1,4 @@
-# Day 8: Power BI Credit Intelligence Dashboard
+# Days 8-9: Power BI Credit Intelligence Dashboard
 
 Day 8 turns the Day 7 Excel decision report into an interactive dashboard in
 Power BI Service. The report is saved in the authenticated Power BI workspace
@@ -12,12 +12,16 @@ as `Credit Intelligence Dashboard Report`.
 
 ## Dashboard components
 
-- KPI cards: total applications, total requested amount, and average credit score
+- KPI cards: total applications, total requested amount, average credit score,
+  approval rate, and assessment match rate
 - Column chart: applications by system decision
 - Donut chart: applications by risk grade
 - Detail table: company, industry, requested amount, credit score, risk grade,
   system decision, decision reason, and assessment match
 - Interactive slicers: industry, risk grade, and system decision
+- Conditional colors: green for approve/A, orange for review/C, and red for
+  decline/D
+- Report title and subtitle for portfolio presentation
 
 ## Verified baseline
 
@@ -27,6 +31,8 @@ as `Credit Intelligence Dashboard Report`.
 - System decisions: 1 approve, 1 decline, and 1 review
 - Risk grades: 1 A, 1 C, and 1 D
 - All three system recommendations match the stored assessment recommendation
+- Approval rate: 33.3%
+- Assessment match rate: 100.0%
 
 The slicers were tested to confirm that the KPI cards, charts, and detail table
 filter together. Requested amount and credit score remain unsummarized in the
